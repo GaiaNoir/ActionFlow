@@ -246,8 +246,8 @@ export default function ProcessPage() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
           {processingState.isProcessing && (
             <Loading 
-              uploadProgress={processingState.uploadProgress}
-              hasFile={!!selectedFile}
+              type="processing"
+              progress={processingState.uploadProgress}
             />
           )}
           
@@ -261,7 +261,7 @@ export default function ProcessPage() {
           
           {processingState.results && (
             <Results 
-              results={processingState.results}
+              data={processingState.results}
               onProcessAnother={handleProcessAnother}
             />
           )}

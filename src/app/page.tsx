@@ -200,7 +200,7 @@ export default function Home() {
             Ready to Transform Your Meetings?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Join thousands of professionals who've eliminated meeting follow-up busywork
+            Join thousands of professionals who&apos;ve eliminated meeting follow-up busywork
           </p>
           <Link 
             href="/process"

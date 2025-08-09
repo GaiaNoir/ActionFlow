@@ -2,7 +2,9 @@ import {
   SUPPORTED_AUDIO_TYPES, 
   SUPPORTED_EXTENSIONS, 
   MAX_FILE_SIZE,
-  FileValidationResult 
+  FileValidationResult,
+  SupportedAudioType,
+  SupportedExtension
 } from '@/types/file';
 
 export function validateFile(file: File): FileValidationResult {
@@ -15,11 +17,11 @@ export function validateFile(file: File): FileValidationResult {
   }
 
   // Check file type
-  const isValidType = SUPPORTED_AUDIO_TYPES.includes(file.type as (typeof SUPPORTED_AUDIO_TYPES)[number]);
+  const isValidType = SUPPORTED_AUDIO_TYPES.includes(file.type as SupportedAudioType);
   
   // Check file extension as fallback
   const fileExtension = '.' + file.name.split('.').pop()?.toLowerCase();
-  const isValidExtension = SUPPORTED_EXTENSIONS.includes(fileExtension as (typeof SUPPORTED_EXTENSIONS)[number]);
+  const isValidExtension = SUPPORTED_EXTENSIONS.includes(fileExtension as SupportedExtension);
 
   if (!isValidType && !isValidExtension) {
     return {
