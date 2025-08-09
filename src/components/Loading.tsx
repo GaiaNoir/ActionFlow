@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 interface LoadingProps {
   type: 'processing' | 'uploading' | 'transcribing' | 'analyzing';
   progress?: number;
-  stage?: 'uploading' | 'transcribing' | 'analyzing' | 'generating';
 }
 
 const PROCESSING_STAGES = [
@@ -15,7 +14,7 @@ const PROCESSING_STAGES = [
   { key: 'generating', label: 'Generating results...', duration: 5000, icon: 'document' }
 ];
 
-export default function Loading({ type, progress, stage }: LoadingProps) {
+export default function Loading({ type, progress }: LoadingProps) {
   const [currentStage, setCurrentStage] = useState(0);
   const [stageProgress, setStageProgress] = useState(0);
   const [estimatedTimeRemaining, setEstimatedTimeRemaining] = useState(30);

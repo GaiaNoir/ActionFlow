@@ -25,7 +25,7 @@ export default function Error({
           <h1 className="text-4xl font-bold text-slate-900 mb-4">Oops!</h1>
           <h2 className="text-xl font-semibold text-slate-700 mb-2">Something went wrong</h2>
           <p className="text-slate-500 mb-8">
-            We encountered an unexpected error. Don't worry, your data is safe.
+            We encountered an unexpected error. Don&apos;t worry, your data is safe.
           </p>
         </div>
         

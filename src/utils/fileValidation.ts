@@ -15,11 +15,11 @@ export function validateFile(file: File): FileValidationResult {
   }
 
   // Check file type
-  const isValidType = SUPPORTED_AUDIO_TYPES.includes(file.type as any);
+  const isValidType = SUPPORTED_AUDIO_TYPES.includes(file.type as (typeof SUPPORTED_AUDIO_TYPES)[number]);
   
   // Check file extension as fallback
   const fileExtension = '.' + file.name.split('.').pop()?.toLowerCase();
-  const isValidExtension = SUPPORTED_EXTENSIONS.includes(fileExtension as any);
+  const isValidExtension = SUPPORTED_EXTENSIONS.includes(fileExtension as (typeof SUPPORTED_EXTENSIONS)[number]);
 
   if (!isValidType && !isValidExtension) {
     return {

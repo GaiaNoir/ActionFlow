@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
             { status: 400 }
           );
         }
-      } catch (error) {
+      } catch (parseError) {
         return NextResponse.json(
           { success: false, error: 'Invalid JSON body' },
           { status: 400 }
@@ -116,16 +116,16 @@ export async function POST(request: NextRequest) {
         data: parsedData
       });
 
-    } catch (error) {
-      console.error('GPT-4 analysis error:', error);
+    } catch (analysisError) {
+      console.error('GPT-4 analysis error:', analysisError);
       return NextResponse.json(
         { success: false, error: 'Failed to analyze transcript with GPT-4' },
         { status: 500 }
       );
     }
 
-  } catch (error) {
-    console.error('API route error:', error);
+  } catch (routeError) {
+    console.error('API route error:', routeError);
     return NextResponse.json(
       { success: false, error: 'Internal server error' },
       { status: 500 }
